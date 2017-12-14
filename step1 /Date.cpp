@@ -47,6 +47,58 @@ bool Date::leapCalc(int year){
 }
 
 unsigned int Date::modernTime(){
+    unsigned int dayCount = 0;
+    int tempYear;
+    tempYear = year;
+    dayCount = dayCount + day;
+    if (leapCalc(year) == true && month > 2){ //In case the current year is a leap year the leap day alread happened.
+        dayCount++;
+    }
+    if (month >= 2){ //starts at 2 becuse only counting compleated months.
+        dayCount += 31;
+    }
+    if (month >= 3){
+        dayCount += 28;
+    }
+    if(month >= 4){
+        dayCount += 31;
+    }
+    if(month >= 5){
+        dayCount += 30;
+    }
+    if(month >= 6){
+        dayCount += 31;
+    }
+    if(month >= 7){
+        dayCount += 30;
+    }
+    if(month >= 8){
+        dayCount += 31;
+    }
+    if(month >= 9){
+        dayCount += 31;
+    }
+    if(month >= 10){
+        dayCount += 30;
+    }
+    if(month >= 11){
+        dayCount += 31;
+    }
+    if(month >= 12){
+        dayCount += 30;
+    }
+    tempYear--;
+    while (tempYear >= 1901){
+        if (leapCalc(tempYear) == false){//adds days depending on wether or not it is a leap year.
+            dayCount = dayCount + 365;
+        }
+        else if(leapCalc(tempYear) == true){
+            dayCount = dayCount + 366;
+        }
+        tempYear--;
+    }
+    dayCount--; //decresed by 1 since first day is 0;
+    return dayCount;
 }
 
 int Date::getYear(){
@@ -65,3 +117,6 @@ ostream& operator <<(ostream& outputStream, const Date& date){
     outputStream << date.month << "/" << date.day << "/" << date.year;
     return outputStream;
 }
+
+Date operator -(Date date){
+    }

@@ -4,7 +4,8 @@
 using namespace std;
 
 int main(){
-    Date d(2016, 2, 29);
+    Date d(1901, 2, 1);
     cout << d << endl;
+    cout << d.modernTime() << endl;
     
 }
