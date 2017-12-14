@@ -101,6 +101,21 @@ unsigned int Date::modernTime(){
     return dayCount;
 }
 
+string Date::dayOfWeek(){
+    int modTime, day;
+    day = 3; //day is equal to 3 becuse the first day was a tuesday.
+    modTime = modernTime();
+    while(modTime > 0){
+        day++;
+        if (day >= 7){
+            day = 0;
+        }
+        modTime--;
+    }
+    day--; //to counteract off by 1 error. 
+    return weekDay[day];
+}
+
 int Date::getYear(){
     return year;
 }

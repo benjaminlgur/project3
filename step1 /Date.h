@@ -4,11 +4,13 @@
 #include <iostream> 
 using namespace std;
 
+const string weekDay[7] = {"Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"};
+
 class Date{
     public:
         Date(int year, int month, int day);
         unsigned int modernTime(); //Output modern time (days since 1/1/1901)
-        //string dayOfWeek(Date obj);
+        string dayOfWeek();
         friend ostream& operator <<(ostream& outputStream, const Date& date);
         int getYear();
         int getMonth();
@@ -21,5 +23,7 @@ class Date{
         bool leapCalc(int year);
         bool validDate(Date& obj);
 };
+
+Date operator -(Date date);
 
 #endif
