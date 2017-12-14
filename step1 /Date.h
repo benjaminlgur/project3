@@ -11,7 +11,7 @@ class Date{
         Date(int year, int month, int day);
         unsigned int modernTime(); //Output modern time (days since 1/1/1901)
         string dayOfWeek();
-        
+        int operator -(Date& rhs);
         friend ostream& operator <<(ostream& outputStream, const Date& date);
         int getYear();
         int getMonth();
@@ -26,6 +26,6 @@ class Date{
         bool validDate(Date& obj);
 };
 
-Date operator -(Date date);
+
 
 #endif

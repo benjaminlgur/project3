@@ -245,9 +245,8 @@ ostream& operator <<(ostream& outputStream, const Date& date){
     return outputStream;
 }
 
-Date operator -(Date rhs){
-    Date out(0, 0, 0);
+int Date::operator -(Date& rhs){
     int diff;
-    diff = modernTime() - rhs.modernTime();
-    out = modToDate(diff);
-    }
+    diff = (this->modernTime()) - (rhs.modernTime());
+    return diff;
+}

@@ -4,9 +4,11 @@
 using namespace std;
 
 int main(){
-    Date d(1997, 12, 9);
+    Date d(1901, 1, 1);
+    Date p(1091, 2, 1);
     cout << d << endl;
     cout << d.modernTime() << endl;
-    //cout << d.modToDate(35406) << endl;
-    
+    cout << p << endl;
+    cout << p.modernTime() << endl;
+    cout << p - d << endl;
 }
