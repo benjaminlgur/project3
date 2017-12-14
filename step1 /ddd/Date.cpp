@@ -104,13 +104,13 @@ unsigned int Date::modernTime(){
 Date Date::modToDate(int modTime){
     Date output(1901, 1, 1);
     while (true){
-        if(leapCalc(output.year) == true){
+        if(leapCalc(year) == true){
             if(modTime < 366){
                 break;
             }
             modTime -= 366;
         }
-        else if(leapCalc(output.year) == false){
+        else if(leapCalc(year) == false){
             if(modTime < 365){
                 break;
             }
@@ -119,8 +119,8 @@ Date Date::modToDate(int modTime){
         output.year++;
     }
     while (true){
-        //cout << modTime << endl;
-        //exit(1);
+        cout << modTime << endl;
+        exit(1);
         if (modTime >= 31){ //Jan
             output.month++;
             modTime -= 31;
@@ -128,11 +128,11 @@ Date Date::modToDate(int modTime){
         else {
             break;
         }
-        if (modTime >= 29 && leapCalc(output.year) == true){ //Feb
+        if (modTime >= 29 && leapCalc(year) == true){ //Feb
             output.month++;
             modTime -= 29;
         }
-        else if (modTime >= 28 && leapCalc(output.year) == false){ //Feb
+        else if (modTime >= 28 && leapCalc(year) == false){ //Feb
             output.month++;
             modTime -= 28;
         }
@@ -146,25 +146,11 @@ Date Date::modToDate(int modTime){
         else {
             break;
         }
-        if (modTime >= 30){ //Apr
-            output.month++;
-            modTime -= 30;
-        }
-        else { 
-            break;
-        }
-        if (modTime >= 31){ //May
-            output.month++;
-            modTime -= 31;
-        }
-        else {
-            break;
-        }
         if (modTime >= 30){ //Jun
             output.month++;
             modTime -= 30;
         }
-        else {
+        else { 
             break;
         }
         if (modTime >= 31){ //Jul
@@ -199,9 +185,7 @@ Date Date::modToDate(int modTime){
             output.month++;
             modTime -= 30;
         }
-        else {
-            break;
-        }
+        else break;
         if (modTime >= 31){ //Dec
             output.month++;
             modTime -= 31;
