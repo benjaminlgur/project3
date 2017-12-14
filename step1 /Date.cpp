@@ -48,3 +48,20 @@ bool Date::leapCalc(int year){
 
 unsigned int Date::modernTime(){
 }
+
+int Date::getYear(){
+    return year;
+}
+
+int Date::getMonth(){
+    return month;
+}
+
+int Date::getDay(){
+    return day;
+}
+
+ostream& operator <<(ostream& outputStream, const Date& date){
+    outputStream << date.month << "/" << date.day << "/" << date.year;
+    return outputStream;
+}
