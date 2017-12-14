@@ -7,6 +7,6 @@ int main(){
     Date d(1997, 12, 9);
     cout << d << endl;
     cout << d.modernTime() << endl;
-    cout << d.modToDate(35406) << endl;
+    //cout << d.modToDate(35406) << endl;
     
 }

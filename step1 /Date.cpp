@@ -119,8 +119,6 @@ Date Date::modToDate(int modTime){
         output.year++;
     }
     while (true){
-        //cout << modTime << endl;
-        //exit(1);
         if (modTime >= 31){ //Jan
             output.month++;
             modTime -= 31;
@@ -247,5 +245,9 @@ ostream& operator <<(ostream& outputStream, const Date& date){
     return outputStream;
 }
 
-Date operator -(Date date){
+Date operator -(Date rhs){
+    Date out(0, 0, 0);
+    int diff;
+    diff = modernTime() - rhs.modernTime();
+    out = modToDate(diff);
     }

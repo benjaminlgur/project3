@@ -11,7 +11,7 @@ class Date{
         Date(int year, int month, int day);
         unsigned int modernTime(); //Output modern time (days since 1/1/1901)
         string dayOfWeek();
-        Date modToDate(int modTime);
+        
         friend ostream& operator <<(ostream& outputStream, const Date& date);
         int getYear();
         int getMonth();
@@ -21,6 +21,7 @@ class Date{
         int month;
         int day;
         //bool leapYear;
+        Date modToDate(int modTime);
         bool leapCalc(int year);
         bool validDate(Date& obj);
 };
