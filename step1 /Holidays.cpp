@@ -53,23 +53,23 @@ void Holidays::nextHoliday(Date cur){
     int dayCalc = cur.modernTime();
     while(true){
         if (dayCalc == thanksgiving.modernTime()){
-            cout << "The next holiday is Thanksgiving, which is " << thanksgiving - cur << " days from today!\n" << endl;
+            cout << "The next holiday is Thanksgiving, which is " << thanksgiving - cur << " days from today!" << endl;
         return;
         }
         else if (dayCalc == independenceDay.modernTime()){
-            cout << "The next holiday is Independence Day, which is " << independenceDay - cur << " days from today!\n" << endl;
+            cout << "The next holiday is Independence Day, which is " << independenceDay - cur << " days from today!" << endl;
             return;
         }
         else if (dayCalc == schoolDay.modernTime()){
-            cout << "The next holiday is School Day, which is " << schoolDay - cur << " days from today!\n" << endl;
+            cout << "The next holiday is School Day, which is " << schoolDay - cur << " days from today!" << endl;
             return;
         }
         else if (dayCalc == currBirthday.modernTime()){
-            cout << "The next holiday is Your birthday, which is " << currBirthday - cur << " days from today!\n" << endl;
+            cout << "The next holiday is Your birthday, which is " << currBirthday - cur << " days from today!" << endl;
             return;
         }
         else if (dayCalc == nextThanksgiving.modernTime()){
-            cout << "The next holiday is Thanksgiving, which is " << nextThanksgiving - cur << " days from today!\n" << endl;
+            cout << "The next holiday is Thanksgiving, which is " << nextThanksgiving - cur << " days from today!" << endl;
             return;
         }
         else if (dayCalc == nextIndependenceDay.modernTime()){
@@ -77,11 +77,11 @@ void Holidays::nextHoliday(Date cur){
             return;
         }
         else if (dayCalc == nextSchoolDay.modernTime()){
-            cout << "The next holiday is School Day, which is " << nextSchoolDay - cur << " days from today!\n" << endl;
+            cout << "The next holiday is School Day, which is " << nextSchoolDay - cur << " days from today!" << endl;
             return;
         }
         else if (dayCalc == nextBirthday.modernTime()){
-            cout << "The next holiday is Your birthday, which is " << nextBirthday - cur << " days from today!\n" << endl;
+            cout << "The next holiday is Your birthday, which is " << nextBirthday - cur << " days from today!" << endl;
             return;
         }
         else {

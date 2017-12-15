@@ -1,8 +1,8 @@
-all: proj
-proj: main.o Date.h Date.o Holidays.o Holidays.h
+all: project3
+project3: main.o Date.h Date.o Holidays.o Holidays.h
 	g++ -o main.o -c main.cpp
 	g++ -o Date.o -c Date.cpp
 	g++ -o Holidays.o -c Holidays.cpp
-	g++ -o proj Date.o main.o Holidays.o
+	g++ -o project3 Date.o main.o Holidays.o
 clean:
-	rm proj
+	rm project3
