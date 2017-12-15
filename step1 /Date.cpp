@@ -31,7 +31,7 @@ bool Date::validDate(Date& obj){
     }
 }
 
-bool Date::leapCalc(int y){
+bool Date::leapCalc(int y){ //based on wikipidia sudo code
     if(y % 4 != 0){
         return false;
     }
@@ -57,7 +57,7 @@ unsigned int Date::modernTime(){
     if (month >= 2){ //starts at 2 becuse only counting compleated months.
         dayCount += 31;
     }
-    if (month >= 3){
+    if (month >= 3){ //to the date I add the amount of dates in the month. 
         dayCount += 28;
     }
     if(month >= 4){
@@ -101,7 +101,7 @@ unsigned int Date::modernTime(){
     return dayCount;
 }
 
-Date Date::modToDate(int modTime){
+Date Date::modToDate(int modTime){ //reverse of moderntime()
     Date output(1901, 1, 1);
     while (true){
         if(leapCalc(output.year) == true){
@@ -219,13 +219,13 @@ string Date::dayOfWeek(){
     modTime = modernTime();
     while(modTime > 0){
         day++;
-        if (day >= 7){
+        if (day >= 7){ //if it goes past sunday it resets the week.
             day = 0;
         }
         modTime--;
     }
     day--; //to counteract off by 1 error. 
-    if(day == -1){ 
+    if(day == -1){ //fixes in case of -1.
         day = 6;
     }
     return weekDay[day];
@@ -244,14 +244,18 @@ int Date::getDay(){
     return day;
 }
 
-ostream& operator <<(ostream& outputStream, const Date& date){
-    outputStream << monthName[date.month-1] << " " << date.day << ", " << date.year;
-    return outputStream;
+ostream& operator <<(ostream& outputStream, const Date& date){ 
+    outputStream << Date::monthName[date.month-1] << " " << date.day << ", " << date.year;
+    return outputStream; //outputs in written date format.
 }
 
 int Date::operator -(Date& rhs){
     int diff;
     diff = (this->modernTime()) - (rhs.modernTime());
-    return diff;
+    return diff; //subtracts the modern time of the left handside and right hand side and returns the diffrence in modern
 }
+
+
+string Date::monthName[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}; //static member variable array.
+
 

@@ -9,7 +9,7 @@ thanksgiving(year, 11, 1), independenceDay(year, 7, 4), schoolDay(year, 8, 31), 
 {
     while(true){
         if(schoolDay.dayOfWeek() == "Monday"){
-            break;
+            break; //moves backwards breaking on first monday
         }
         else {
             schoolDay.day--;
@@ -21,7 +21,7 @@ thanksgiving(year, 11, 1), independenceDay(year, 7, 4), schoolDay(year, 8, 31), 
             thurCount++;
         }
         if(thurCount >= 4){
-            break;
+            break; //moves forwards breaking on 4th thursday 
         }
         else{
             thanksgiving.day++;
@@ -41,7 +41,7 @@ thanksgiving(year, 11, 1), independenceDay(year, 7, 4), schoolDay(year, 8, 31), 
             thurCount2++;
         }
         if(thurCount2 >= 4){
-            break;
+            break; //moves forwards breaking on 4th thursday
         }
         else{
             nextThanksgiving.day++;
@@ -65,7 +65,7 @@ void Holidays::nextHoliday(Date cur){
             return;
         }
         else if (dayCalc == currBirthday.modernTime()){
-            cout << "The next holiday is Your birthday, which is " << currBirthday - cur << " days from today!" << endl;
+            cout << "The next holiday is your birthday, which is " << currBirthday - cur << " days from today!" << endl;
             return;
         }
         else if (dayCalc == nextThanksgiving.modernTime()){
@@ -81,8 +81,7 @@ void Holidays::nextHoliday(Date cur){
             return;
         }
         else if (dayCalc == nextBirthday.modernTime()){
-            //cout << "SDAD " << nextBirthday.modernTime() << " " << cur.modernTime() << endl; exit(1);
-            cout << "The next holiday is Your birthday, which is " << nextBirthday - cur << " days from today!" << endl;
+            cout << "The next holiday is your birthday, which is " << nextBirthday - cur << " days from today!" << endl;
             return;
         }
         else {
