@@ -228,6 +228,10 @@ string Date::dayOfWeek(){
     return weekDay[day];
 }
 
+//int dayMath(int num){
+    //this->day = this->day + num;
+//}
+
 int Date::getYear(){
     return year;
 }
