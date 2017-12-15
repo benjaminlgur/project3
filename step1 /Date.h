@@ -2,9 +2,12 @@
 #define DATE_H
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 const string weekDay[7] = {"Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday"};
+
+const string monthName[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
 class Date{
     public:
@@ -27,7 +30,5 @@ class Date{
         bool leapCalc(int year);
         bool validDate(Date& obj);
 };
-
-
 
 #endif

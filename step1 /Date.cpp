@@ -245,7 +245,7 @@ int Date::getDay(){
 }
 
 ostream& operator <<(ostream& outputStream, const Date& date){
-    outputStream << date.month << "/" << date.day << "/" << date.year;
+    outputStream << monthName[date.month-1] << " " << date.day << ", " << date.year;
     return outputStream;
 }
 
@@ -254,3 +254,4 @@ int Date::operator -(Date& rhs){
     diff = (this->modernTime()) - (rhs.modernTime());
     return diff;
 }
+
