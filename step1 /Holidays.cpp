@@ -81,6 +81,7 @@ void Holidays::nextHoliday(Date cur){
             return;
         }
         else if (dayCalc == nextBirthday.modernTime()){
+            //cout << "SDAD " << nextBirthday.modernTime() << " " << cur.modernTime() << endl; exit(1);
             cout << "The next holiday is Your birthday, which is " << nextBirthday - cur << " days from today!" << endl;
             return;
         }
@@ -107,30 +108,30 @@ Date Holidays::getCurrBirthday(){
 }
 
 void Holidays::setBirthday(int year){
-    cout << "Enter birth year (1901 or later)\n";
+    cout << "Enter birth year (1901 or later): ";
     cin >> birthday.year;
-    cout << "Enter birth month (1-12):\n";
+    cout << "Enter birth month (1-12): ";
     cin >> birthday.month;
-    cout << "Enter birth day (1-31):\n";
+    cout << "Enter birth day (1-31): ";
     cin >> birthday.day;
-    if(birthday.month != 2 && birthday.day != 29 && birthday.leapCalc(year) == false){
-        currBirthday.year = year;
-        currBirthday.month = birthday.month;
-        currBirthday.day = birthday.day;
-    }
-    else {
+    if(birthday.month == 2 && birthday.day == 29 && birthday.leapCalc(year) == false){
         currBirthday.year = year;
         currBirthday.month = birthday.month;
         currBirthday.day = 28;
     }
-    if(nextBirthday.month != 2 && birthday.day != 29 && birthday.leapCalc(year+1) == false){
+    else {
+        currBirthday.year = year;
+        currBirthday.month = birthday.month;
+        currBirthday.day = birthday.day;
+    }
+    if(birthday.month == 2 && birthday.day == 29 && birthday.leapCalc(currBirthday.year+1) == false){
         nextBirthday.year = year+1;
         nextBirthday.month = birthday.month;
-        nextBirthday.day = birthday.day;
+        nextBirthday.day = 28;
     }
     else {
         nextBirthday.year = year+1;
         nextBirthday.month = birthday.month;
-        nextBirthday.day = 28;
+        nextBirthday.day = birthday.day;
     }
 }

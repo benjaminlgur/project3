@@ -31,14 +31,14 @@ bool Date::validDate(Date& obj){
     }
 }
 
-bool Date::leapCalc(int y){
-    if(y % 4 != 0){
+bool Date::leapCalc(int year){
+    if(year % 4 != 0){
         return false;
     }
-    else if(y % 100 != 0){
+    else if(year % 100 != 0){
         return true;
     }
-    else if(y % 400 != 0){
+    else if(year % 400 != 0){
         return false;
     }
     else{
@@ -46,8 +46,8 @@ bool Date::leapCalc(int y){
     }
 }
 
-unsigned int Date::modernTime(){
-    unsigned int dayCount = 0;
+int Date::modernTime(){
+    int dayCount = 0;
     int tempYear;
     tempYear = year;
     dayCount = dayCount + day;
@@ -225,12 +225,12 @@ string Date::dayOfWeek(){
         modTime--;
     }
     day--; //to counteract off by 1 error. 
-    if(day == -1){ 
-        day = 6;
-    }
     return weekDay[day];
 }
 
+//int dayMath(int num){
+    //this->day = this->day + num;
+//}
 
 int Date::getYear(){
     return year;

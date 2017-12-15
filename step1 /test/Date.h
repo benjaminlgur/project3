@@ -13,7 +13,7 @@ class Date{
     public:
         Date(int year, int month, int day);
         friend class Holidays;
-        unsigned int modernTime(); //Output modern time (days since 1/1/1901)
+        int modernTime(); //Output modern time (days since 1/1/1901)
         string dayOfWeek();
         int operator -(Date& rhs);
         friend ostream& operator <<(ostream& outputStream, const Date& date);
@@ -27,7 +27,7 @@ class Date{
         int day;
         //bool leapYear;
         Date modToDate(int modTime);
-        bool leapCalc(int y);
+        bool leapCalc(int year);
         bool validDate(Date& obj);
 };
 

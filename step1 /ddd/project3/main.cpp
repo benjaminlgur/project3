@@ -6,11 +6,11 @@ using namespace std;
 
 int main(){
     int curYear, curMonth, curDay;
-    cout << "Enter year (1901 or later):\n";
+    cout << "Enter year (1901 or later): ";
     cin >> curYear;
-    cout << "Enter month (1-12):\n";
+    cout << "Enter month (1-12): ";
     cin >> curMonth;
-    cout << "Enter day (1-31):\n";
+    cout << "Enter day (1-31): ";
     cin >> curDay;
     Date cur(curYear, curMonth, curDay); //cur stands for current.
     Holidays holiday (curYear);    
