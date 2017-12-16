@@ -1,3 +1,10 @@
+/*
+  Author: <Benjamin Gur>
+  Course: {135}
+  Instructor: <Prof Pajula>
+  Assignment: <Project 3>
+*/
+
 #include <iostream>
 #include <string>
 #include <stdlib.h>
